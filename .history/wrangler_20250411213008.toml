@@ -1,0 +1,32 @@
+# wrangler.toml
+
+# Name of your Cloudflare Worker project
+name = "pars-mars"
+
+# Type of compatibility (e.g., "webpack" or "rust")
+#main = "dist/worker.js"
+
+# Node.js compatibility mode (required for Next.js and other Node.js-based frameworks)
+compatibility_flags = ["nodejs_compat"]
+
+# Compatibility date (ensures features are available up to this date)
+compatibility_date = "2023-10-01"
+
+# Build configuration
+[build]
+command = "npm run build && npx @cloudflare/next-on-pages"
+cwd = "./"
+upload.format = "modules"
+
+# Environment variables (optional)
+#[vars]
+#NEXT_PUBLIC_API_KEY = "your-api-key-here"
+#ANOTHER_ENV_VAR = "some-value"
+
+# Routes (optional, if you're using custom domains or routes)
+#[[routes]]
+#pattern = "*.example.com/*"
+zone_id = "your-zone-id-here"
+
+# Enable usage of Node.js modules in Workers
+node_compat = true
