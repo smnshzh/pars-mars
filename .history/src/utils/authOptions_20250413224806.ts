@@ -1,3 +1,4 @@
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { hashPassword, verifyPassword } from "./auth";
 import type { D1Database } from "@cloudflare/workers-types";
@@ -29,7 +30,7 @@ export const authOptions = {
             .bind(credentials.email)
             .all();
 
-          const users = results as { id: integer; email: string; password: string; name?: string }[];
+          const users = results as { id: string; email: string; password: string; name?: string }[];
 
           if (users.length === 0) {
             // Create new user

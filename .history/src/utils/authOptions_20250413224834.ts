@@ -29,7 +29,7 @@ export const authOptions = {
             .bind(credentials.email)
             .all();
 
-          const users = results as { id: integer; email: string; password: string; name?: string }[];
+          const users = results as { id: string; email: string; password: string; name?: string }[];
 
           if (users.length === 0) {
             // Create new user
