@@ -6,16 +6,21 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:worker": ""
   },
   "dependencies": {
+    "@cloudflare/d1": "^1.4.1",
+    "bcrypt": "^5.1.1",
     "next": "15.3.0",
+    "next-auth": "^4.24.11",
     "pars-mars": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@opennextjs/cloudflare": "^1.0.0-beta.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
